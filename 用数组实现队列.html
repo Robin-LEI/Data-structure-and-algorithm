@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>用数组实现队列</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// 常见队列的操作
+		// 1. 出队，dequeue,移除队列中第一个元素，并返回被移除元素
+		// 2. 入队，enqueue, 在队尾加一个新的元素
+		// 3. 获取队列的第一个元素，最先被添加的元素，front
+		// 4. 判断队列是否为空,isEmpty
+		// 5. 队列中的元素转为字符串,toString
+		// 6. 获取队列的长度,size
+		function Queue() {
+			this.items = new Array()
+			// 1.dequeue
+			Queue.prototype.dequeue = function() {
+				return this.items.shift()
+			}
+			// 2. enqueue
+			Queue.prototype.enqueue = function(ele) {
+				this.items.push(ele)
+			}
+			// 3. front
+			Queue.prototype.front = function() {
+				return this.items[0]
+			}
+			// 4. isEmpty
+			Queue.prototype.isEmpty = function() {
+				return this.items.length > 0 ? false : true
+			}
+			// 5. toString()
+			Queue.prototype.toString = function() {
+				return this.items.join(' ')
+			}
+			// 6. size
+			Queue.prototype.size = function() {
+				return this.items.length
+			}
+		}
+
+		var q = new Queue()
+
+		q.enqueue(1)
+		q.enqueue('hello')
+		q.enqueue('world')
+		q.enqueue(2)
+
+		console.log(q)
+
+		q.dequeue()
+
+		console.log(q)
+
+		console.log(q.front())
+
+		console.log(q.isEmpty())
+
+		console.log(q.toString())
+
+		console.log(q.size())
+
+	</script>
+</body>
+</html>

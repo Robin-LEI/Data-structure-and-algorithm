@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>用数组实现栈</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// 用数组实现一个栈，可以进行一下操作
+		// 1. 出栈 pop()
+		// 2. 入栈push()
+		// 3. 查看栈顶元素peek()
+		// 4. 获取栈元素个数size()
+		// 5. 判断栈是否为空isEmpty()
+		// 6. 栈的toString()方法，把栈的元素转为以空格分隔的字符串返回
+		function Stack() {
+			this.items = new Array()
+			// pop
+			Stack.prototype.pop = function() {
+				this.items.pop()
+			}
+			// push
+			Stack.prototype.push = function(ele) {
+				this.items.push(ele)
+			}
+			// peek
+			Stack.prototype.peek = function() {
+				return this.items[this.items.length - 1]
+			}
+			// size
+			Stack.prototype.size = function() {
+				return this.items.length
+			}
+			// isEmpty
+			Stack.prototype.isEmpty = function() {
+				return this.items.length > 0 ? false : true
+			}
+			// toString
+			Stack.prototype.toString = function() {
+				return this.items.join(' ')
+			}
+			// reverse
+			Stack.prototype.reverse = function() {
+				return this.items.reverse()
+			}
+			// join
+			Stack.prototype.join = function(char = '') {
+				return this.items.join(char)
+			}
+		}
+		var s = new Stack()
+		s.push(1)
+		s.push(2)
+		s.push(3)
+		s.push(4)
+
+		console.log(s)
+
+		s.pop()
+
+		console.log(s)
+
+		console.log(s.peek())
+
+		console.log(s.isEmpty())
+
+		console.log(s.toString())
+
+		s.pop()
+		s.pop()
+		s.pop()
+
+		console.log(s.isEmpty())
+
+		console.log(s.toString())
+
+		// 十进制转为二进制
+		function dec2bin(dec) {
+			var s = new Stack()
+			while(dec > 0) {
+				s.push(dec % 2)
+				dec = ~~(dec / 2)
+			}
+			return s.reverse().join(' ')
+		}
+
+		console.log(dec2bin(100))
+		console.log(dec2bin(1000))
+
+	    // wx.showModal({
+        //   title: '更新提示',
+        //   content: '当前小程序已有新版本，是否重启应用?',
+        //   success(res) {
+        //     if (res.confirm) { // 新版本已经下载好，调用applyUpdate应用新版本
+        //       updateManager.applyUpdate() // 强制小程序重启应用新版本
+        //     }
+        //   }
+        // })
+
+        
+
+	</script>
+</body>
+</html>
