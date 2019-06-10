@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>优先级队列</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function PriorityQueue() {
+			// 定义一个内部类
+			function QueueElement(element, priority) {
+				this.element = element
+				this.priority = priority
+			}
+			// 定义一个属性
+			this.items = []
+			//  封装一个插入优先级队列的方法
+			PriorityQueue.prototype.enqueue = function(element, priority) {
+				var element = new QueueElement(element, priority)
+				var flag = false
+				// 判断队列是否为空
+				if(!this.items.length) {
+					this.items.push(element)
+					return 
+				} 
+				// 队列非空，比较插入元素的优先级
+				for(var i = 0,len = this.items.length; i < len; i++) {
+					if(element.priority > this.items[i].priority) {
+						this.items.splice(i, 0, element)
+						flag = !flag
+						break
+					}
+				}
+				if(!flag) this.items.push(element)
+			}
+		}
+
+		var qe = new PriorityQueue()
+		qe.enqueue('lww', 110)
+		qe.enqueue('robion', 10)
+		qe.enqueue('xd', 1220)
+		console.log(qe)
+	</script>
+</body>
+</html>
