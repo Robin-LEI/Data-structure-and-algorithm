@@ -100,6 +100,24 @@
 				current.data = data
 				return true
 			}
+			// removeAt
+			LinkedList.prototype.removeAt = function(position) {
+				if(position < 0 || position >= this.length) return null
+				var index = 0
+				var current = this.head
+				var previous = null
+				if(position == 0) {
+					current = this.head.next
+				} else {
+					while(index++ < position) {
+						previous = current
+						current = current.next
+					}
+					previous.next = current.next
+				}
+				this.length -= 1
+				return current.data
+			}
 		}
 		var link = new LinkedList()
 		link.append('robin')
@@ -117,6 +135,10 @@
 		link.update(0, 'robin success')
 		console.log(link)
 		link.update(6, 'test')
+		console.log(link)
+		link.removeAt(0)
+		console.log(link)
+		link.removeAt(2)
 		console.log(link)
 	</script>
 </body>

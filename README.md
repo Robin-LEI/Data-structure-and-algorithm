@@ -76,3 +76,5 @@
 * get(position) //获取指定位置的节点
 * indexOf(element) //返回元素在链表中的索引，找不到就返回-1
 * update(position, element) //修改某一个位置的元素
+* removeAt(position) // 移除指定位置的元素
+* remove(data) //删除指定项
