@@ -65,6 +65,16 @@
 				this.length += 1
 				return true
 			}
+			// get
+			LinkedList.prototype.get = function(position) {
+				if(position < 0 || position >= this.length) return false
+				var index = 0
+				var current = this.head
+				while(index++ < position) {
+					current = current.next
+				}
+				return current.data
+			}
 		}
 		var link = new LinkedList()
 		link.append('robin')
@@ -75,6 +85,8 @@
 		console.log(link)
 		link.insert(4,'javascript')
 		console.log(link)
+		console.log(link.get(0))
+		console.log(link.get(4))
 	</script>
 </body>
 </html>
