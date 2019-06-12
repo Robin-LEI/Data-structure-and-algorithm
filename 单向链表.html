@@ -89,6 +89,17 @@
 				}
 				return -1
 			}
+			// update
+			LinkedList.prototype.update = function(position, data) {
+				if(position < 0 || position >= this.length) return false
+				var index = 0
+				var current = this.head
+				while(index++ < position) {
+					current = current.next	
+				}
+				current.data = data
+				return true
+			}
 		}
 		var link = new LinkedList()
 		link.append('robin')
@@ -103,6 +114,10 @@
 		console.log(link.get(4))
 		console.log(link.indexOf('robin'))
 		console.log(link.indexOf('javascript'))
+		link.update(0, 'robin success')
+		console.log(link)
+		link.update(6, 'test')
+		console.log(link)
 	</script>
 </body>
 </html>
