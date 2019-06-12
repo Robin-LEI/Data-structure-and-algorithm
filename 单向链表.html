@@ -124,6 +124,14 @@
 				console.log(this.removeAt(0))
 				return this.removeAt(this.indexOf(data))
 			}
+			// isEmpty
+			LinkedList.prototype.isEmpty = function() {
+				return this.length == 0
+			}
+			// size
+			LinkedList.prototype.size = function() {
+				return this.length
+			}
 		}
 		var link = new LinkedList()
 		link.append('robin')

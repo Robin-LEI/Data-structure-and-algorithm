@@ -78,3 +78,5 @@
 * update(position, element) //修改某一个位置的元素
 * removeAt(position) // 移除指定位置的元素
 * remove(data) //删除指定项
+* isEmpty() // 判断链表是否为空
+* size() //获取链表的长度
