@@ -75,6 +75,20 @@
 				}
 				return current.data
 			}
+			// indexOf
+			LinkedList.prototype.indexOf = function(data) {
+				if(this.length == 0) return -1
+				var current = this.head
+				var index = 0
+				while(current) {
+					if(current.data == data) {
+						return index
+					}
+					current = current.next
+					index += 1
+				}
+				return -1
+			}
 		}
 		var link = new LinkedList()
 		link.append('robin')
@@ -87,6 +101,8 @@
 		console.log(link)
 		console.log(link.get(0))
 		console.log(link.get(4))
+		console.log(link.indexOf('robin'))
+		console.log(link.indexOf('javascript'))
 	</script>
 </body>
 </html>
