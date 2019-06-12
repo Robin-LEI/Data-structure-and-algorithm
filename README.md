@@ -80,3 +80,5 @@
 * remove(data) //删除指定项
 * isEmpty() // 判断链表是否为空
 * size() //获取链表的长度
+
+* test
