@@ -107,7 +107,7 @@
 				var current = this.head
 				var previous = null
 				if(position == 0) {
-					current = this.head.next
+					this.head = this.head.next
 				} else {
 					while(index++ < position) {
 						previous = current
@@ -117,6 +117,12 @@
 				}
 				this.length -= 1
 				return current.data
+			}
+			// remove
+			LinkedList.prototype.remove = function(data) {
+				console.log(this.indexOf(data))
+				console.log(this.removeAt(0))
+				return this.removeAt(this.indexOf(data))
 			}
 		}
 		var link = new LinkedList()
@@ -139,6 +145,12 @@
 		link.removeAt(0)
 		console.log(link)
 		link.removeAt(2)
+		console.log(link)
+		link.remove('robin success')
+		console.log(link)
+		link.remove('lww')
+		console.log(link)
+		link.remove('javascript')
 		console.log(link)
 	</script>
 </body>
