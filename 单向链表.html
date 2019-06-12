@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		function LinkedList() {
+			// 节点内部类
+			function Node(data) {
+				this.data = data
+				this.next = null
+			}
+			// 链表的head指针，默认指向null
+			this.head = null
+			// 链表长度默认为0
+			this.length = 0
+			// append方法
+			LinkedList.prototype.append = function(data) {
+				// 1.创建新节点
+				var node = new Node(data)
+				// 2.判断新节点是否是第一个节点
+				if(this.length == 0) { // 是第一个节点
+					this.head = node
+					this.length += 1
+					return
+				}
+				var current = this.head
+				while(current.next) { // 当前节点不是最后一个节点
+					current = current.next
+				}
+				current.next = node // 让最后一个节点指向新节点
+				this.length += 1
+			}
+			// toString
+			LinkedList.prototype.toString = function() {
+				var current = this.head
+				var resultStr = ''
+				while(current) {
+					resultStr += current.data
+					current = current.next
+				}
+				return resultStr
+			}
+		}
+		var link = new LinkedList()
+		link.append('robin')
+		link.append('lww')
+		link.append('xudan')
+		console.log(link)
+	</script>
+</body>
+</html>
