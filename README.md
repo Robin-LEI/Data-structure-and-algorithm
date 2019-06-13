@@ -107,3 +107,5 @@
 * 双向链表的最后一个节点的next是null
 
 **双向链表的常见操作**
+* append // 在末尾插入一项
+* insert(position, element) // 在指定位置插入一项
