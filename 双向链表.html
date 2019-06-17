@@ -27,7 +27,40 @@
 				}
 				this.length += 1
 			}
+			// toString 默认情况下是从前往后
+			DoublyLinkedList.prototype.toString = function() {
+				return this.backString()
+			}
+			// forwardString 从后往前
+			DoublyLinkedList.prototype.forwardString = function() {
+				var current = this.tail
+				var result = ''
+				while(current) {
+					result += current.data + " "
+					current = current.prev
+				}
+				return result
+			}
+			// backString 从前往后
+			DoublyLinkedList.prototype.backString = function() {
+				var current = this.head
+				var result = ''
+				while(current) {
+					result += current.data + " "
+					current = current.next
+				}
+				return result
+			}
 		}
+
+		var dl = new DoublyLinkedList()
+		dl.append('robin')
+		dl.append('lww')
+		dl.append('xudan')
+
+		alert(dl)
+
+		alert(dl.forwardString())
 	</script>
 </body>
 </html>
