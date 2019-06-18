@@ -116,3 +116,9 @@
 * get(position) // 根据位置获取元素
 * indexOf(data) // 找出指定数据的索引
 * update(position, element) // 修改某个位置的元素为element
+* removeAt(position) // 删除指定位置元素
+* remove(data)
+* isEmpty()
+* size
+* getHead() // 获取链表的第一个元素
+* getTail() // 获取链表的最后一个元素

@@ -129,6 +129,45 @@
 				current.data = data
 				return true
 			}
+			// removeAt(position)
+			DoublyLinkedList.prototype.removeAt = function(position) {
+				if(position < 0 || position >= this.length) return false
+				var current = this.head
+				if(this.length == 1) {
+					current.prev = null
+					current.next = null
+				} else {
+					if(position == 0) {
+						// current.prev = current.next
+						// current.next.prev = current.prev
+						// current.prev = null
+						// current.next = null
+						// 只要没有人指向自己即刻，就会被垃圾回收，自己的指针不用管
+						this.head.next.prev = null
+						this.head = this.head.next
+					} else if(position == this.length - 1) {
+						console.log('enter')
+						current = this.tail
+						this.tail.prev.next = null
+						// current = current.prev
+						this.tail = this.tail.prev
+						// current.prev.next = null
+						// current.prev = null
+						// current.next = null
+					} else {
+						var index = 0
+						while(index++ < position) {
+							current = current.next
+						}
+						current.prev.next = current.next
+						current.next.prev = current.prev
+						// current.prev = null
+						// current.next = null
+					}
+				}
+				this.length--
+				return current.data // 返回删除元素
+			}
 		}
 
 		var dl = new DoublyLinkedList()
@@ -148,10 +187,14 @@
 
 		// alert(dl.get(0)) 
 		// alert(dl.get(3)) 
-		alert(dl)
+		// alert(dl)
 		// alert(dl.indexOf('lww'))
 
-		dl.update(0, 'robin lei')
+		// dl.update(0, 'robin lei')
+
+		alert(dl)
+
+		alert(dl.removeAt(1))
 
 		alert(dl)
 	</script>
