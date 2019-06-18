@@ -180,6 +180,14 @@
 			DoublyLinkedList.prototype.size = function() {
 				return this.length
 			}
+			// getHead
+			DoublyLinkedList.prototype.getHead = function() {
+				return this.head.data
+			}
+			// getTail
+			DoublyLinkedList.prototype.getTail = function() {
+				return this.tail.data
+			}
 		}
 
 		var dl = new DoublyLinkedList()
@@ -208,13 +216,14 @@
 
 		// alert(dl.removeAt(1))
 
-		alert(dl.remove('lww'))
+		// alert(dl.remove('lww'))
 
-		alert(dl.isEmpty())
+		// alert(dl.isEmpty())
 
-		alert(dl.size())
+		// alert(dl.size())
 
-		alert(dl)
+		alert(dl.getHead())
+		alert(dl.getTail())
 	</script>
 </body>
 </html>
