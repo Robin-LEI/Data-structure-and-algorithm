@@ -168,6 +168,10 @@
 				this.length--
 				return current.data // 返回删除元素
 			}
+			// remove(data)
+			DoublyLinkedList.prototype.remove = function(data) {
+				return this.removeAt(this.indexOf(data))
+			}
 		}
 
 		var dl = new DoublyLinkedList()
@@ -194,7 +198,9 @@
 
 		alert(dl)
 
-		alert(dl.removeAt(1))
+		// alert(dl.removeAt(1))
+
+		alert(dl.remove('lww'))
 
 		alert(dl)
 	</script>
