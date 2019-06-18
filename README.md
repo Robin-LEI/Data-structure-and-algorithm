@@ -109,3 +109,7 @@
 **双向链表的常见操作**
 * append // 在末尾插入一项
 * insert(position, element) // 在指定位置插入一项
+* toString()
+    * forwardString()
+    * backwardString()
+* insert(position, data)

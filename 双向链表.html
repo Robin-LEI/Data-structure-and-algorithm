@@ -51,6 +51,36 @@
 				}
 				return result
 			}
+			// insert(position, data)
+			DoublyLinkedList.prototype.insert = function(position, data) {
+				if(position < 0 || position > this.length) return false
+				var newNode = new Node(data)
+				if(this.length == 0) {
+					this.head = newNode
+					this.tail = newNode
+				} else {
+					if(position == 0) { // 在第一个插入
+						newNode.next = this.head
+						this.head.prev = newNode
+						this.head = newNode
+					} else if(position == this.length) { // 在最后一个插入
+						console.log('enter', this.length)
+						this.tail.next = newNode
+						newNode.prev = this.tail
+						this.tail = newNode
+					} else { // 在中间插入
+						var current = this.head
+						var index = 0
+						while(index++ < position) {
+							current = current.next
+						}
+						newNode.next = current
+						newNode.prev = current.prev
+						current.prev.next = newNode
+						current.prev = newNode
+					}
+				}
+			} 
 		}
 
 		var dl = new DoublyLinkedList()
@@ -58,9 +88,15 @@
 		dl.append('lww')
 		dl.append('xudan')
 
-		alert(dl)
+		// alert(dl)
 
-		alert(dl.forwardString())
+		// alert(dl.forwardString())
+
+		// dl.insert(0, 'xianmao')
+
+		dl.insert(3, 'hello')
+
+		alert(dl)
 	</script>
 </body>
 </html>
