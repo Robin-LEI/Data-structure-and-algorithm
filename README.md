@@ -119,6 +119,6 @@
 * removeAt(position) // 删除指定位置元素
 * remove(data)
 * isEmpty()
-* size
+* size()
 * getHead() // 获取链表的第一个元素
 * getTail() // 获取链表的最后一个元素

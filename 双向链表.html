@@ -172,6 +172,14 @@
 			DoublyLinkedList.prototype.remove = function(data) {
 				return this.removeAt(this.indexOf(data))
 			}
+			// isEmpty
+			DoublyLinkedList.prototype.isEmpty = function() {
+				return !Boolean(this.length)
+			}
+			// size
+			DoublyLinkedList.prototype.size = function() {
+				return this.length
+			}
 		}
 
 		var dl = new DoublyLinkedList()
@@ -201,6 +209,10 @@
 		// alert(dl.removeAt(1))
 
 		alert(dl.remove('lww'))
+
+		alert(dl.isEmpty())
+
+		alert(dl.size())
 
 		alert(dl)
 	</script>
