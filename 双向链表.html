@@ -117,6 +117,18 @@
 				}
 				return -1
 			}
+			// update(position, data)
+			DoublyLinkedList.prototype.update = function(position, data) {
+				if(position < 0 || position >= this.length) return false
+				// 这里也需要考虑position与this.length/2的关系，但是这里我不做判断，直接从前往后
+				var index = 0
+				var current = this.head
+				while(index++ < position) {
+					current = current.next
+				}
+				current.data = data
+				return true
+			}
 		}
 
 		var dl = new DoublyLinkedList()
@@ -137,7 +149,11 @@
 		// alert(dl.get(0)) 
 		// alert(dl.get(3)) 
 		alert(dl)
-		alert(dl.indexOf('lww'))
+		// alert(dl.indexOf('lww'))
+
+		dl.update(0, 'robin lei')
+
+		alert(dl)
 	</script>
 </body>
 </html>
