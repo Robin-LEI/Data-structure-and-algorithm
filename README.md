@@ -113,3 +113,4 @@
     * forwardString()
     * backwardString()
 * insert(position, data)
+* get(position) // 根据位置获取元素

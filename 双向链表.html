@@ -64,7 +64,6 @@
 						this.head.prev = newNode
 						this.head = newNode
 					} else if(position == this.length) { // 在最后一个插入
-						console.log('enter', this.length)
 						this.tail.next = newNode
 						newNode.prev = this.tail
 						this.tail = newNode
@@ -80,7 +79,31 @@
 						current.prev = newNode
 					}
 				}
-			} 
+				this.length++
+			}
+			// get(position)
+			DoublyLinkedList.prototype.get = function(position) {
+				// 临界判断
+				if(position < 0 || position >= this.length) return false
+				var bini = ~~(this.length / 2)
+				var index
+				var current
+				if(position > bini) {
+					current = this.tail
+					index = this.length - 1
+					while(index-- > position) {
+						current = current.prev
+					}
+					return current.data
+				} else {
+					current = this.head
+					index = 0
+					while(index++ < position) {
+						current = current.next
+					}
+					return current.data
+				}
+			}
 		}
 
 		var dl = new DoublyLinkedList()
@@ -97,6 +120,9 @@
 		dl.insert(3, 'hello')
 
 		alert(dl)
+
+		alert(dl.get(0)) 
+		alert(dl.get(3)) 
 	</script>
 </body>
 </html>
