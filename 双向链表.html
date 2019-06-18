@@ -104,6 +104,19 @@
 					return current.data
 				}
 			}
+			// indexOf(data)
+			DoublyLinkedList.prototype.indexOf = function(data) {
+				var index = 0
+				var current = this.head
+				while(current) {
+					if(current.data == data) {
+						return index
+					}
+					current = current.next
+					index++
+				}
+				return -1
+			}
 		}
 
 		var dl = new DoublyLinkedList()
@@ -119,10 +132,12 @@
 
 		dl.insert(3, 'hello')
 
-		alert(dl)
+		// alert(dl)
 
-		alert(dl.get(0)) 
-		alert(dl.get(3)) 
+		// alert(dl.get(0)) 
+		// alert(dl.get(3)) 
+		alert(dl)
+		alert(dl.indexOf('lww'))
 	</script>
 </body>
 </html>

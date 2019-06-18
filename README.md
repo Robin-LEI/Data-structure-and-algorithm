@@ -114,3 +114,5 @@
     * backwardString()
 * insert(position, data)
 * get(position) // 根据位置获取元素
+* indexOf(data) // 找出指定数据的索引
+* update(position, element) // 修改某个位置的元素为element
