@@ -36,6 +36,20 @@
 			Set.prototype.values = function() {
 				return Object.keys(this.items)
 			}
+			// 集合间操作
+			// 并集
+			Set.prototype.union = function(other) {
+				var newSet = new Set()
+				var values = this.values()
+				for(var i = 0; i < values.length; i++) {
+					newSet.add(values[i])
+				}
+				values = other.values()
+				for(var i = 0; i < values.length; i++) {
+					newSet.add(values[i])
+				}
+				return newSet
+			}
 		}
 
 		var set = new Set()
@@ -43,13 +57,22 @@
 		set.add('xudan')
 		set.add('lww')
 
-		alert(set.values())
+		// alert(set.values())
 
-		alert(set.size())
+		// alert(set.size())
 
-		alert(set.clear())
+		// alert(set.clear())
 
-		alert(set.size())
+		// alert(set.size())
+
+		var set2 = new Set()
+		set2.add('robin')
+		set2.add('hello')
+		set2.add('world')
+
+		var x = set.union(set2)
+
+		alert(x.values())
 	</script>
 </body>
 </html>
