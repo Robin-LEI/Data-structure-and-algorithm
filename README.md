@@ -126,3 +126,10 @@
 **集合**
 * 无序、不重复
 * 实现方式是哈希表
+* 常见操作
+    * add(value) // 向集合添加一个新的项
+    * remove(value)
+    * has(value)
+    * clear()
+    * values() // 获取所有的属性
+    * size
