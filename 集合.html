@@ -72,6 +72,17 @@
 				}
 				return newSet
 			}
+			// 子集
+			Set.prototype.subSet = function(other) {
+				var newSet = new Set()
+				var values = this.values()
+				for (var i = 0; i < values.length; i++) {
+					if(!other.has(values[i])) {
+						return false
+					}
+				}
+				return true
+			}
 		}
 
 		var set = new Set()
@@ -89,8 +100,6 @@
 
 		var set2 = new Set()
 		set2.add('robin')
-		set2.add('hello')
-		set2.add('xudan')
 
 		var x = set.union(set2)
 
@@ -99,8 +108,10 @@
 		// var y = set.intersection(set2)
 		// alert(y.values())
 
-		var z = set.difference(set2)
-		alert(z.values())
+		// var z = set.difference(set2)
+		// alert(z.values())
+
+		alert(set2.subSet(set))
 	</script>
 </body>
 </html>
