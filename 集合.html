@@ -61,6 +61,17 @@
 				}
 				return newSet
 			}
+			// 差集
+			Set.prototype.difference = function(other) {
+				var newSet = new Set()
+				var values = this.values()
+				for(var i = 0; i < values.length; i++) {
+					if(!other.has(values[i])) {
+						newSet.add(values[i])
+					}
+				}
+				return newSet
+			}
 		}
 
 		var set = new Set()
@@ -85,8 +96,11 @@
 
 		// alert(x.values())
 
-		var y = set.intersection(set2)
-		alert(y.values())
+		// var y = set.intersection(set2)
+		// alert(y.values())
+
+		var z = set.difference(set2)
+		alert(z.values())
 	</script>
 </body>
 </html>
